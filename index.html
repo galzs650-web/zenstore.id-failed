@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ZENSTORE - Jasa Digital">
+  <title>ZENSTORE — Jasa Digital</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="api-config.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Permanent+Marker&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* Compact payment logos */
+.payment-logo-row{gap:12px;max-width:620px;margin:12px auto 0}
+.payment-logo-card{height:64px;padding:6px 12px;border-radius:10px}
+.payment-logo-card img{max-width:95px;max-height:30px;width:auto;height:auto;object-fit:contain}
+@media(max-width:560px){.payment-logo-row{grid-template-columns:repeat(3,1fr);gap:8px}.payment-logo-card{height:56px;padding:5px}.payment-logo-card img{max-width:78px;max-height:25px}}
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-doodles">✦<br>☆<br>〰</div>
+
+    <div class="hero-copy">
+      <span class="mini-label">FAST • TRUSTED • CREATIVE</span>
+      <h1>ZENSTORE</h1>
+      <p class="tagline">You know which one is cool</p>
+      <div class="trust">♡ FAST &amp; TRUSTED! ♡<span></span></div>
+    </div>
+
+    <div class="trust-badge">
+      <strong>100%</strong>
+      <span>Trusted</span>
+      <small>〰〰</small>
+    </div>
+
+    <div class="hero-art">
+      <img src="./assets/referensi.png?v=2" alt="Ilustrasi ZENSTORE">
+    </div>
+  </header>
+
+  <main>
+    <section class="services-section" id="layanan">
+      <div class="section-heading">
+        <span>✦ OUR SERVICE ✦</span>
+        <h2>PILIH JASA KAMU</h2>
+        <p>Simple, rapi, dan sesuai request.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="card-top"><div class="service-icon">▤</div><div class="crown">♕</div></div>
+          <h3>MAKALAH PRESENTASI</h3>
+          <p class="desc">Makalah rapi dan berkualitas</p>
+          <ul>
+            <li>★ Rapi &amp; terstruktur</li>
+            <li>★ Desain simpel, estetik</li>
+            <li>★ Siap presentasi</li>
+          </ul>
+          <div class="price-row">
+            <div><small>MULAI DARI</small><strong>RP25.000</strong></div>
+            <button class="order-btn" onclick="orderService('Makalah Presentasi','Rp25.000')">ORDER →</button>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="card-top"><div class="service-icon">▣</div><div class="crown">♕</div></div>
+          <h3>LAPORAN PKL</h3>
+          <p class="desc">Laporan PKL lengkap dan mudah dipahami</p>
+          <ul>
+            <li>★ Sesuai KKM</li>
+            <li>★ Rapi &amp; lengkap</li>
+            <li>★ Bahasa mudah dipahami</li>
+          </ul>
+          <div class="price-row">
+            <div><small>MULAI DARI</small><strong>RP30.000</strong></div>
+            <button class="order-btn" onclick="orderService('Laporan PKL','Rp30.000')">ORDER →</button>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="card-top"><div class="service-icon">▣</div><div class="crown">♕</div></div>
+          <h3>EDITING VIDEO</h3>
+          <p class="desc">Editing keren, dinamis, dan video pendek</p>
+          <ul>
+            <li>★ Cut rapi</li>
+            <li>★ Transisi estetik</li>
+            <li>★ Siap untuk TikTok &amp; Reels</li>
+          </ul>
+          <div class="price-row">
+            <div><small>MULAI DARI</small><strong>RP25.000</strong></div>
+            <button class="order-btn" onclick="orderService('Editing Video','Rp25.000')">ORDER →</button>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="card-top"><div class="service-icon">✦</div><div class="crown">♕</div></div>
+          <h3>DESIGN DIGITAL</h3>
+          <p class="desc">Desain digital sesuai impian!</p>
+          <ul>
+            <li>★ Desain original</li>
+            <li>★ Sesuai request</li>
+            <li>★ Bisa revisi</li>
+          </ul>
+          <div class="price-row">
+            <div><small>MULAI DARI</small><strong>RP15.000</strong></div>
+            <button class="order-btn" onclick="orderService('Design Digital','Rp15.000')">ORDER →</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="order-section" id="order">
+      <div class="order-paper">
+        <div class="scribble">✦</div>
+        <div>
+          <span class="eyebrow">ORDER CHAT</span>
+          <h2>SIAP MULAI?</h2>
+          <p>Tekan tombol WhatsApp untuk langsung mengirim detail pesanan.</p>
+        </div>
+        <a class="whatsapp-main" href="https://wa.me/6283857150362" target="_blank" rel="noopener">
+          <span class="wa-icon"><img src="./assets/whatsapp.png?v=2" alt=""></span>
+          083857150362
+        </a>
+      </div>
+    </section>
+
+    <section class="checkout-section" id="checkout">
+      <div class="checkout-head">
+        <div>
+          <span class="checkout-kicker">✦ ZENSTORE ORDER ✦</span>
+          <span class="checkout-label">CHECKOUT</span>
+          <h2>CHECKOUT PESANAN</h2>
+          <p>Isi data pesanan kamu, lalu lanjutkan pembayaran langsung melalui DANA, GoPay, atau ShopeePay.</p>
+        </div>
+        <div class="checkout-steps" aria-label="Tahapan checkout">
+          <div class="step active"><b>01</b><span>PILIH JASA<small>Pilih jasa yang kamu butuhkan</small></span></div>
+          <i>→</i>
+          <div class="step current"><b>02</b><span>ISI DETAIL<small>Lengkapi data pesanan kamu</small></span></div>
+          <i>→</i>
+          <div class="step"><b>03</b><span>BAYAR<small>Lanjutkan ke metode pembayaran pilihanmu</small></span></div>
+        </div>
+      </div>
+
+      <div class="checkout-layout">
+        <aside class="order-summary">
+          <div class="checkout-card-title"><span class="checkout-icon">🛍</span><div><h3>RINGKASAN PESANAN</h3><p>Jasa yang kamu pilih</p></div></div>
+          <div class="cart-items" id="checkoutItems">
+            <div class="empty-cart"><span>🛒</span><strong>Belum ada pesanan</strong><p>Pilih jasa di atas untuk memasukkannya ke checkout.</p></div>
+          </div>
+          <div class="checkout-total"><span>TOTAL</span><strong id="checkoutTotal">Rp0</strong></div>
+          <div class="checkout-confirm">✦ Pembayaran diproses otomatis melalui payment gateway. WhatsApp tetap tersedia jika kamu membutuhkan bantuan.</div>
+        </aside>
+
+        <div class="checkout-form-card">
+          <div class="checkout-card-title"><span class="checkout-icon">✎</span><div><h3>DETAIL PESANAN</h3><p>Lengkapi data sebelum checkout</p></div></div>
+          <form id="checkoutForm">
+            <div class="form-grid">
+              <label>Nama<input id="customerName" type="text" placeholder="Nama kamu" required></label>
+              <label>Nomor WhatsApp<input id="customerWhatsapp" type="tel" placeholder="08xxxxxxxxxx" required></label>
+              <label>Deadline<input id="customerDeadline" type="text" placeholder="Contoh: 30 Agustus 2026" required></label>
+              <label>Metode Pembayaran
+                <select id="paymentMethod" required>
+                  <option value="">Pilih metode pembayaran</option>
+                  <option value="SHOPEEPAY">ShopeePay</option>
+                  <option value="DANA">DANA</option>
+                  <option value="GOPAY">GoPay</option>
+                </select>
+              </label>
+              <label class="full">Detail / Request (Opsional)<textarea id="customerDetail" rows="3" placeholder="Jelaskan kebutuhan atau request kamu..."></textarea></label>
+            </div>
+            <button class="checkout-submit" type="submit" id="checkoutSubmit"><span>◉</span> BAYAR SEKARANG <b>→</b></button>
+            <p class="checkout-note">♧ Setelah tombol ditekan, kamu akan diarahkan ke halaman pembayaran resmi Xendit untuk menyelesaikan transaksi.</p>
+          </form>
+        </div>
+      </div>
+
+      <div class="checkout-payment">
+        <div class="payment-divider"><span>▣ &nbsp; METODE PEMBAYARAN</span></div>
+        <div class="payment-logo-row">
+          <button type="button" class="payment-logo-card" data-method="SHOPEEPAY"><img src="./assets/payment/shopeepay.png" alt="ShopeePay"></button>
+          <button type="button" class="payment-logo-card" data-method="DANA"><img src="./assets/payment/dana.png" alt="DANA"></button>
+          <button type="button" class="payment-logo-card" data-method="GOPAY"><img src="./assets/payment/gopay.png" alt="GoPay"></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>ZENSTORE</strong><span>You know which one is cool</span></div>
+    <a href="https://wa.me/6283857150362" target="_blank" rel="noopener">WhatsApp • 083857150362</a>
+    <p>© ZENSTORE. All rights reserved.</p>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const waNumber = "6283857150362";
+    const paymentApi = window.ZENSTORE_API_URL || "https://GANTI-DENGAN-URL-VERCEL-KAMU.vercel.app/api/create-payment";
+
+    let cart = JSON.parse(localStorage.getItem("zenstoreCart") || "[]");
+
+    function parsePrice(price) {
+      return Number(String(price).replace(/[^0-9]/g, "")) || 0;
+    }
+
+    function orderService(service, price) {
+      const existing = cart.find(item => item.service === service);
+      if (existing) existing.qty += 1;
+      else cart.push({ service, price, amount: parsePrice(price), qty: 1 });
+      saveCart();
+      renderCart();
+      document.getElementById("checkout").scrollIntoView({ behavior: "smooth", block: "start" });
+      showToast(`${service} ditambahkan ke checkout.`);
+    }
+
+    function saveCart() {
+      localStorage.setItem("zenstoreCart", JSON.stringify(cart));
+    }
+
+    function renderCart() {
+      const box = document.getElementById("checkoutItems");
+      const totalEl = document.getElementById("checkoutTotal");
+      if (!box || !totalEl) return;
+      if (!cart.length) {
+        box.innerHTML = '<div class="empty-cart"><span>🛒</span><strong>Belum ada pesanan</strong><p>Pilih jasa di atas untuk memasukkannya ke checkout.</p></div>';
+        totalEl.textContent = "Rp0";
+        return;
+      }
+      let total = 0;
+      box.innerHTML = cart.map((item, index) => {
+        const subtotal = item.amount * item.qty;
+        total += subtotal;
+        return `<div class="cart-row">
+          <div class="cart-info"><strong>${item.service}</strong><small>${item.price} / item</small></div>
+          <div class="qty-controls"><button type="button" onclick="changeQty(${index}, -1)" aria-label="Kurangi">−</button><b>${item.qty}</b><button type="button" onclick="changeQty(${index}, 1)" aria-label="Tambah">+</button></div>
+          <strong class="cart-subtotal">Rp${subtotal.toLocaleString('id-ID')}</strong>
+          <button type="button" class="cart-remove" onclick="removeItem(${index})" aria-label="Hapus">×</button>
+        </div>`;
+      }).join("");
+      totalEl.textContent = `Rp${total.toLocaleString("id-ID")}`;
+    }
+
+    function changeQty(index, delta) {
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) cart.splice(index, 1);
+      saveCart();
+      renderCart();
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      saveCart();
+      renderCart();
+    }
+
+    document.getElementById("checkoutForm")?.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      if (!cart.length) { showToast("Pilih jasa terlebih dahulu."); return; }
+
+      const name = document.getElementById("customerName").value.trim();
+      const phone = document.getElementById("customerWhatsapp").value.trim();
+      const deadline = document.getElementById("customerDeadline").value.trim();
+      const method = document.getElementById("paymentMethod").value.trim();
+      const detail = document.getElementById("customerDetail").value.trim() || "-";
+      const submit = document.getElementById("checkoutSubmit");
+
+      if (!method) { showToast("Pilih metode pembayaran terlebih dahulu."); return; }
+      submit.disabled = true;
+      submit.innerHTML = '<span>◌</span> MEMBUAT PEMBAYARAN...';
+
+      try {
+        const response = await fetch(paymentApi, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, phone, deadline, detail, payment_method: method, cart })
+        });
+        const data = await response.json();
+        if (!response.ok || !data.success) throw new Error(data.message || "Gagal membuat pembayaran.");
+
+        localStorage.setItem("zenstoreLastPayment", JSON.stringify({
+          orderId: data.order_id,
+          paymentRequestId: data.payment_request_id,
+          total: data.total,
+          method,
+          createdAt: Date.now()
+        }));
+        window.location.href = data.redirect_url;
+      } catch (error) {
+        showToast(error.message || "Pembayaran gagal dibuat.");
+        submit.disabled = false;
+        submit.innerHTML = '<span>◉</span> BAYAR SEKARANG <b>→</b>';
+      }
+    });
+
+    document.querySelectorAll(".payment-logo-card").forEach(card => {
+      card.addEventListener("click", () => {
+        document.getElementById("paymentMethod").value = card.dataset.method;
+        document.getElementById("paymentMethod").scrollIntoView({ behavior: "smooth", block: "center" });
+        const labels = { SHOPEEPAY: "ShopeePay", DANA: "DANA", GOPAY: "GoPay" };
+        showToast(`${labels[card.dataset.method] || card.dataset.method} dipilih.`);
+      });
+    });
+
+    async function copyNumber(method) {
+      const number = "083857150362";
+      try {
+        await navigator.clipboard.writeText(number);
+        showToast(`${method}: nomor ${number} berhasil disalin!`);
+      } catch {
+        showToast(`Nomor ${method}: ${number}`);
+      }
+    }
+
+    function showToast(text) {
+      const toast = document.getElementById("toast");
+      toast.textContent = text;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 2600);
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll(".service-card, .order-paper, .checkout-section, .checkout-card-title, .payment-logo-card").forEach(el => observer.observe(el));
+    renderCart();
+  </script>
+</body>
+</html>

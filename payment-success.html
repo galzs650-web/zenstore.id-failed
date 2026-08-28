@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ZENSTORE — Pembayaran</title><link rel="stylesheet" href="style.css"><script src="api-config.js"></script></head>
+<body><main class="payment-result-page"><div class="payment-result-card"><div class="result-mark success">✓</div><span class="checkout-kicker">✦ ZENSTORE ✦</span><h1>Pembayaran Berhasil</h1><p>Pembayaran kamu sudah diterima oleh payment gateway. Pesanan akan diproses setelah status transaksi terverifikasi.</p><div class="result-order" id="orderText">Memverifikasi pembayaran...</div><a class="checkout-submit result-home" href="index.html">KEMBALI KE ZENSTORE →</a></div></main><script>
+(async()=>{
+  const q=new URLSearchParams(location.search);
+  const order=q.get('order_id')||'-';
+  const el=document.getElementById('orderText');
+  const saved=JSON.parse(localStorage.getItem('zenstoreLastPayment')||'null');
+  el.textContent='Order: '+order+' • Memverifikasi...';
+  if(!saved || !saved.paymentRequestId){ el.textContent='Order: '+order+' • Silakan cek status di dashboard merchant.'; return; }
+  for(let i=0;i<8;i++){
+    try{
+      const r=await fetch(((window.ZENSTORE_API_URL || '').replace(/\/api\/create-payment$/, '') || 'https://GANTI-DENGAN-URL-VERCEL-KAMU.vercel.app')+'/api/payment-status?id='+encodeURIComponent(saved.paymentRequestId),{cache:'no-store'});
+      const d=await r.json();
+      if(d.success && d.status==='SUCCEEDED'){ el.textContent='Order: '+(d.order_id||order)+' • LUNAS'; localStorage.removeItem('zenstoreCart'); return; }
+      if(d.success && ['FAILED','EXPIRED','CANCELED'].includes(d.status)){ el.textContent='Order: '+(d.order_id||order)+' • '+d.status; return; }
+      el.textContent='Order: '+order+' • Status: '+(d.status||'MENUNGGU');
+    }catch(e){ el.textContent='Order: '+order+' • Menunggu verifikasi...'; }
+    await new Promise(r=>setTimeout(r,2500));
+  }
+})();
+</script></body></html>
